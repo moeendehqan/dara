@@ -1,0 +1,193 @@
+@font-face{
+    font-family: 'peydaRegular';
+    src: url('../../public/Peyda/Peyda-Regular.ttf') format('truetype'),
+    url('../../public/Peyda/PeydaWeb/woff/PeydaWeb-Regular.woff') format('woff'),
+    url('../../public/Peyda/PeydaWeb/woff2/PeydaWeb-Regular.woff2') format('woff2');
+   }
+
+
+$colorBlue :#2d41fd;
+$colorPink :#c63ef1;
+$colorTosi :#eae4e4;
+$colorError :#c45151;
+$colorBlueTxt : #384ab4;
+$colorGreen : #5aae40;
+$colorRed : #ae4040;
+
+
+$colorBDark:#20409d;
+$colorBSemi:#1980c3;
+$colorBLite:#2094d2;
+$colorBUltra:#22c0eb;
+$colorDisable:#636363;
+
+@mixin gradiant() {
+    background-image: linear-gradient(to top right,$colorBDark,$colorBUltra);
+}
+
+
+@mixin btn() {
+    background-image: linear-gradient(to top right,$colorBDark,$colorBSemi);
+    width: 100px;
+    height: 25px;
+    border: 0px;
+    border-radius: 8px;
+    color: $colorTosi;
+    font-size: 14pt;
+    cursor: pointer;
+}
+
+@mixin inp(){
+    border: 0px;
+    width: 200px;
+    background: #fff;
+    height: 30px;
+    margin: 5px;
+    border-radius: 10px;
+    text-align: center;
+    &::-webkit-inner-spin-button{
+        display: none;
+    }
+
+}
+html , body, #root{
+    height: 100%;
+    
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'peydaRegular';
+
+}
+
+
+.homePage{
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    background-color: #fff;
+    justify-content: space-around;
+    align-items: center;
+
+    .login{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 350px;
+        background: rgba($colorBSemi, 0.3);
+
+        padding: 80px 0px 30px 0px;
+        border-radius: 20px;
+        border: 1px $colorBDark solid;
+
+
+        
+        .captcha{
+            width: 200px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            img{
+                width: 200px;
+                cursor: pointer;
+                border-radius: 15px;
+            }
+        }
+        input{
+            @include inp();
+        }
+        .ent{
+            @include gradiant();
+            border: 0px;
+            height: 30px;
+            width: 80px;
+            border-radius: 10px;
+            color: $colorTosi;
+            margin: 10px;
+            cursor: pointer;
+        }
+        .btnEdt{
+            background: transparent;
+            border: 0px;
+            border-radius: 10px;
+            color: $colorBlue;
+            margin: 10px;
+            cursor: pointer;
+        }
+        .errMsg{
+            background: #fff;
+            color: $colorError;
+            border: 2px $colorError solid;
+            border-right-width: 5px;
+            padding: 3px 8px;
+            width: 200px;
+            text-align: right;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+    }
+    .brd{
+        z-index: 0;
+        display: flex;
+        flex-direction: column;
+        justify-items: center;
+        align-items: center;
+        justify-content: center;
+        align-content: center;
+        right: min(250px,20%);
+        .logo{
+            position: relative;
+            width: 200px;
+            height: 200px;
+            margin: 20px;
+            img{
+                position: absolute;
+            }
+            .prt{
+                opacity: 0;
+            }
+            .prt1{
+                animation: pt1 3s 0s alternate infinite forwards;
+            }
+            .prt2{
+                animation: pt1 3s 0.5s alternate infinite forwards;
+            }
+            .prt3{
+                animation: pt1 3s 1s alternate infinite forwards;
+            }
+            .prt4{
+                animation: pt1 3s 1.5s alternate infinite forwards;
+            }
+            @keyframes pt1 {
+                20%{opacity: 0;}
+                35%{opacity: 100;}
+                70%{opacity: 100;}
+                85%{opacity: 0;}
+                
+            }
+        }
+        h1{
+            font-family: 'peydaRegular';
+            width: 270px;
+            text-align: center;
+            font-size: 13pt;
+            color: #fff;
+            background: $colorBlue;
+            padding: 6px;
+            border-radius: 8px;
+            margin: 10px;
+        }
+        a{
+            font-family: 'peydaRegular';
+            font-size: 13pt;
+            text-decoration: none;
+            color: $colorBlue;
+        }
+
+    }
+    
+}
+

@@ -1,0 +1,150 @@
+@font-face {
+  font-family: "peydaRegular";
+  src: url("../../public/Peyda/Peyda-Regular.ttf") format("truetype"), url("../../public/Peyda/PeydaWeb/woff/PeydaWeb-Regular.woff") format("woff"), url("../../public/Peyda/PeydaWeb/woff2/PeydaWeb-Regular.woff2") format("woff2");
+}
+html, body, #root {
+  height: 100%;
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: "peydaRegular";
+}
+
+.homePage {
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  background-color: #fff;
+  justify-content: space-around;
+  align-items: center;
+}
+.homePage .login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 350px;
+  background: rgba(25, 128, 195, 0.3);
+  padding: 80px 0px 30px 0px;
+  border-radius: 20px;
+  border: 1px #20409d solid;
+}
+.homePage .login .captcha {
+  width: 200px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.homePage .login .captcha img {
+  width: 200px;
+  cursor: pointer;
+  border-radius: 15px;
+}
+.homePage .login input {
+  border: 0px;
+  width: 200px;
+  background: #fff;
+  height: 30px;
+  margin: 5px;
+  border-radius: 10px;
+  text-align: center;
+}
+.homePage .login input::-webkit-inner-spin-button {
+  display: none;
+}
+.homePage .login .ent {
+  background-image: linear-gradient(to top right, #20409d, #22c0eb);
+  border: 0px;
+  height: 30px;
+  width: 80px;
+  border-radius: 10px;
+  color: #eae4e4;
+  margin: 10px;
+  cursor: pointer;
+}
+.homePage .login .btnEdt {
+  background: transparent;
+  border: 0px;
+  border-radius: 10px;
+  color: #2d41fd;
+  margin: 10px;
+  cursor: pointer;
+}
+.homePage .login .errMsg {
+  background: #fff;
+  color: #c45151;
+  border: 2px #c45151 solid;
+  border-right-width: 5px;
+  padding: 3px 8px;
+  width: 200px;
+  text-align: right;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.homePage .brd {
+  z-index: 0;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  right: min(250px, 20%);
+}
+.homePage .brd .logo {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: 20px;
+}
+.homePage .brd .logo img {
+  position: absolute;
+}
+.homePage .brd .logo .prt {
+  opacity: 0;
+}
+.homePage .brd .logo .prt1 {
+  animation: pt1 3s 0s alternate infinite forwards;
+}
+.homePage .brd .logo .prt2 {
+  animation: pt1 3s 0.5s alternate infinite forwards;
+}
+.homePage .brd .logo .prt3 {
+  animation: pt1 3s 1s alternate infinite forwards;
+}
+.homePage .brd .logo .prt4 {
+  animation: pt1 3s 1.5s alternate infinite forwards;
+}
+@keyframes pt1 {
+  20% {
+    opacity: 0;
+  }
+  35% {
+    opacity: 100;
+  }
+  70% {
+    opacity: 100;
+  }
+  85% {
+    opacity: 0;
+  }
+}
+.homePage .brd h1 {
+  font-family: "peydaRegular";
+  width: 270px;
+  text-align: center;
+  font-size: 13pt;
+  color: #fff;
+  background: #2d41fd;
+  padding: 6px;
+  border-radius: 8px;
+  margin: 10px;
+}
+.homePage .brd a {
+  font-family: "peydaRegular";
+  font-size: 13pt;
+  text-decoration: none;
+  color: #2d41fd;
+}/*# sourceMappingURL=style.css.map */
