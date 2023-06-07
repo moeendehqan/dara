@@ -6,12 +6,25 @@ import { useNavigate  } from 'react-router-dom'
 
 const Home = () =>{
     const [CaptchaCode, setCaptchaCode] = useState(null)
+    const [Code, setCode] = useState('')
     const [CaptchaImg, setCaptchaImg] = useState(null)
-    const [UserInput, setUserInput] =useState({'phone':'','captcha':'','code':'','nationalCode':''})
-    const [errMsg, setErrMsg] =useState('')
+    const [UserInput, setUserInput] = useState({'phone':'','captcha':'','code':'','nationalCode':''})
+    const [errMsg, setErrMsg] = useState('')
     const [status,setStatus] = useState('getNationalcode')
 
     const Navigate = useNavigate()
+
+    const CheckCookie = () =>{
+        var cookie = getCookie('phn')
+        if (cookie){
+        axios({method:'POST', url:OnRun+'/dara/checkcookie', data:{cookie:cookie}
+    }).then(response=>{
+        if (response.data.replay){
+            Navigate('/desk')
+        }
+    })
+}
+    }
 
     const getCaptcha = () =>{
         axios({method:'POST',url:OnRun+'/captcha'
@@ -30,13 +43,13 @@ const Home = () =>{
             axios({method:'POST',url:OnRun+'/dara/applynationalcode',data:{UserInput:UserInput,captchaCode:CaptchaCode}
             }).then(response=>{
                 if(response.data.replay){
-                    if (response.data.status=='NotFound') {
+                    if (response.data.status=='NotFund') {
                         setErrMsg('متاسفانه کد ملی وارد شده یافت نشد')
                     }else if(response.data.status=='RegisterDara'){
                         Navigate('register', {state:{nationalCode:UserInput['nationalCode']}})
                     }
-                    else{
-                        console.log('')
+                    else {
+                        setStatus(response.data.status)
                     }
 
                 }else{
@@ -57,6 +70,27 @@ const Home = () =>{
         })
     }
 
+    const handleCode =()=>{
+        if (Code.length != 5){
+            setErrMsg('کد صحیح نیست')
+
+        }
+        else{
+            axios({method:'POST', url: OnRun + '/dara/coderegistered',
+             data:{nationalCode:UserInput['nationalCode'],Code:Code}
+            }).then(response=>{
+                if(response.data.replay){
+                    setCookie('phn', response.data.cookie, 1)
+                    Navigate('desk')
+
+                }
+                else{
+                    setErrMsg(response.data.msg)
+                }
+            })
+        }
+    }
+
 
     const AccessCheck = () =>{
         const id = getCookie('id')
@@ -72,6 +106,7 @@ const Home = () =>{
 
     useEffect(getCaptcha,[])
     useEffect(AccessCheck,[])
+    useEffect(CheckCookie,[])
     return(
         <div className='homePage'>
             <div className='login'>
@@ -84,21 +119,13 @@ const Home = () =>{
                             {CaptchaImg==null?null:<img onClick={getCaptcha} src={`data:image/png;base64,${CaptchaImg}`}></img>}
                         </div>
                         <button className='ent' onClick={applyNationalCode}>تایید</button>
-                    </>:status==='NotFund'?
-                    <>
-                        <h6>
-                            متاسفانه کد ملی وارد شده یافت نشد
-                        </h6>
-                        <p>درصورت مغایرت با امور شرکت (۰۳۵۳۵۲۳۶۶۳۳) تماس حاصل نمایید</p>
-                        <button className='ent' onClick={()=>setStatus('getNationalcode')}>جدید</button>
-
-                    </>:status==='RegisterDara'?
+                    </>:status==='Registered'?
                     <>
                        <h6>
-                            برای ادامه فرایند میبایست فرایند 
+                            لطفا کد تایید را وارد کنید
                         </h6>
-                        <p>درصورت مغایرت با امور شرکت (۰۳۵۳۵۲۳۶۶۳۳) تماس حاصل نمایید</p>
-                        <button className='ent' onClick={()=>setStatus('getNationalcode')}>جدید</button>
+                        <input value={Code} onChange={(e)=>{setCode(e.target.value)}} />
+                        <button className='ent' onClick={handleCode}>ورود</button>
                     </>:
                     <>
                     </>
