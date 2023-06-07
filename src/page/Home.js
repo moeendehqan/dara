@@ -30,12 +30,13 @@ const Home = () =>{
             axios({method:'POST',url:OnRun+'/dara/applynationalcode',data:{UserInput:UserInput,captchaCode:CaptchaCode}
             }).then(response=>{
                 if(response.data.replay){
-                    if (response.data.status!=='RegisterDara') {
-                        setStatus(response.data.status)
-                        setErrMsg('')
-                    }else{
+                    if (response.data.status=='NotFound') {
+                        setErrMsg('متاسفانه کد ملی وارد شده یافت نشد')
+                    }else if(response.data.status=='RegisterDara'){
                         Navigate('register', {state:{nationalCode:UserInput['nationalCode']}})
-
+                    }
+                    else{
+                        console.log('')
                     }
 
                 }else{
