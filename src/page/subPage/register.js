@@ -66,7 +66,7 @@ const Register = () =>{
             response=>{
                 if(response.data.replay){
                     setCookie('phn', response.data.cookie, 1)
-                    navigate('/desk')
+                    navigate('/company')
             
                 }
                 else{

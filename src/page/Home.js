@@ -20,7 +20,7 @@ const Home = () =>{
         axios({method:'POST', url:OnRun+'/dara/checkcookie', data:{cookie:cookie}
     }).then(response=>{
         if (response.data.replay){
-            Navigate('/desk')
+            Navigate('/company')
         }
     })
 }
@@ -81,7 +81,7 @@ const Home = () =>{
             }).then(response=>{
                 if(response.data.replay){
                     setCookie('phn', response.data.cookie, 1)
-                    Navigate('desk')
+                    Navigate('/company')
 
                 }
                 else{
