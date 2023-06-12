@@ -265,6 +265,111 @@ header{
     
 }
 
+.company{
+    background:linear-gradient(225deg,$colorBUltra,$colorBDark);
+    >p{
+        font-size: 20pt;
+        color: $colorTosi;
+        padding: 10px;
+        width: 100px;
+        cursor: pointer;
+       
+    }
+    .listcompany{
+        background-color: $colorTosi;
+        margin: 0px 20px;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        .eachcompany{
+            h2{
+                font-size: 12pt;
+                text-align: center;
+                color: $colorBSemi;
+                margin-top: 10px;
+            }
+            overflow: hidden;
+            &:hover{
+                .title{
+                .names{
+                    :nth-child(2){
+                        opacity: 1;
+                    }
+                }
+                img{
+                    transform: rotate(-35deg) scale(1.5);
+                    opacity: 0.4;
+                }
+            }
+
+            }
+        
+        display: flex;
+        background-color: rgba($color: #fff, $alpha: 0.5);
+        border: 1px white solid;
+        padding: 10px;
+        border-radius: 15px;
+        flex-direction: column;
+        margin: 20px;
+        width: 250px;
+        height: 100px;
+        cursor: pointer;
+        .title{
+
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: space-around;
+            align-items: center;
+            .names{
+                >p{
+                    color: $colorBDark;
+                }
+                :nth-child(1){
+                    font-size: 15pt;
+                    text-align: right;
+
+                }
+                :nth-child(2){
+                    text-align: right;
+                    opacity: 0;
+                    transition: 0.5s;
+                }
+            }
+
+            img{
+                width: 70px;
+                height: 70px;
+                transition: 0.5s;
+
+            }
+        }
+    }
+
+    .ziro{
+
+        .title{
+            .names{
+                p{
+                color: $colorDisable;
+            }
+        }
+        img{
+            filter: grayscale(1);
+        }
+    }
+    h2{
+            color: $colorDisable;
+            
+        }
+        
+
+    }
+}
+
+}
 
 
 

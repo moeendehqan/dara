@@ -216,6 +216,85 @@ header span {
   cursor: pointer;
 }
 
+.company {
+  background: linear-gradient(225deg, #22c0eb, #20409d);
+}
+.company > p {
+  font-size: 20pt;
+  color: #eae4e4;
+  padding: 10px;
+  width: 100px;
+  cursor: pointer;
+}
+.company .listcompany {
+  background-color: #eae4e4;
+  margin: 0px 20px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.company .listcompany .eachcompany {
+  overflow: hidden;
+  display: flex;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 1px white solid;
+  padding: 10px;
+  border-radius: 15px;
+  flex-direction: column;
+  margin: 20px;
+  width: 250px;
+  height: 100px;
+  cursor: pointer;
+}
+.company .listcompany .eachcompany h2 {
+  font-size: 12pt;
+  text-align: center;
+  color: #1980c3;
+  margin-top: 10px;
+}
+.company .listcompany .eachcompany:hover .title .names :nth-child(2) {
+  opacity: 1;
+}
+.company .listcompany .eachcompany:hover .title img {
+  transform: rotate(-35deg) scale(1.5);
+  opacity: 0.4;
+}
+.company .listcompany .eachcompany .title {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-around;
+  align-items: center;
+}
+.company .listcompany .eachcompany .title .names > p {
+  color: #20409d;
+}
+.company .listcompany .eachcompany .title .names :nth-child(1) {
+  font-size: 15pt;
+  text-align: right;
+}
+.company .listcompany .eachcompany .title .names :nth-child(2) {
+  text-align: right;
+  opacity: 0;
+  transition: 0.5s;
+}
+.company .listcompany .eachcompany .title img {
+  width: 70px;
+  height: 70px;
+  transition: 0.5s;
+}
+.company .listcompany .ziro .title .names p {
+  color: #636363;
+}
+.company .listcompany .ziro .title img {
+  filter: grayscale(1);
+}
+.company .listcompany .ziro h2 {
+  color: #636363;
+}
+
 .container {
   display: flex;
   flex-direction: row;
