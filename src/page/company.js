@@ -11,7 +11,7 @@ const Company = ()=>{
 
     const navigate = useNavigate()
     const [datadf, setDatadf] = useState([])
-    console.log(datadf)
+
 
     const cookie = getCookie('phn')
     const handleExit = ()=>{
@@ -52,8 +52,7 @@ const Company = ()=>{
 
     const handletoCompany = (symbol,volume)=>{
         if(volume>0){
-            console.log(symbol)
-           navigate('/desk', {state:{symbol:symbol}} )
+           navigate('/'+symbol+'/desk', )
         }
     }
 

@@ -1,13 +1,14 @@
-import {useOutletContext, useNavigate } from "react-router-dom"
+import {useNavigate , useParams} from "react-router-dom"
 import { getCookie, setCookie } from "../Function/cookie"
 import axios from "axios"
 import { OnRun } from "../config/OnRun"
-import { useEffect } from "react"
+import { useEffect , useContext } from "react"
 
 const Trades = () =>{
+    const symbol = useParams()
+    console.log(symbol)
 
-    const [data] = useOutletContext()
-    console.log(data)
+   
 
     const cookie = getCookie('phn')
     const navigate = useNavigate()

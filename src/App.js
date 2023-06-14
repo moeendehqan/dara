@@ -14,9 +14,9 @@ function App() {
         <Route path='/' element={<Home />}/>
         <Route path='/register' element={<Register />}/>
         <Route path='/company' element={<Company />}/>
-        <Route path='/desk' element = {<Desk />}>
-          <Route path='trades' element = {<Trades/>}></Route>  
-          <Route path='assembly' element = {<Assembly/>}></Route>  
+        <Route path='/:symbol/desk/' element = {<Desk />}>
+          <Route path='trades/' element = {<Trades/>}></Route>  
+          <Route path='assembly/' element = {<Assembly/>}></Route>  
         </Route>
 
       </Routes>

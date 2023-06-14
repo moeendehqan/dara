@@ -3,13 +3,16 @@ import { useEffect } from "react"
 import { setCookie } from "../../Function/cookie"
 import Header from "../../component/header"
 import { getCookie } from "../../Function/cookie"
-import { Outlet, useNavigate, useLocation } from "react-router-dom"
+import { Outlet, useNavigate, useParams } from "react-router-dom"
 import axios from "axios"
 import { OnRun } from "../../config/OnRun"
 
+
 const Desk = () =>{
-    const {state} = useLocation()
-    console.log(state)
+
+
+
+ 
 
     const cookie = getCookie('phn')
     const navigate = useNavigate()
@@ -36,8 +39,8 @@ const Desk = () =>{
         <div className="desk">
             <Header/>
             <div className="container">
-                <Menu/>
-                <Outlet context={{symbol:state}}/>
+                <Menu symbol={'state.symbol'}/>
+                <Outlet />
             </div>
         </div>
     )
