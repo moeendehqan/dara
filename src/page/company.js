@@ -48,9 +48,12 @@ const Company = ()=>{
         })
     }
 
-    const handletoCompany =(symbol,volume)=>{
+
+
+    const handletoCompany = (symbol,volume)=>{
         if(volume>0){
-           navigate('/desk', {state:symbol})
+            console.log(symbol)
+           navigate('/desk', {state:{symbol:symbol}} )
         }
     }
 

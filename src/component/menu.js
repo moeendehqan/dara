@@ -6,7 +6,7 @@ const Menu = () =>{
     return(
         <div className="menu">
             
-                <p onClick={()=>{navigate('dashboard')}}> داشبورد </p>
+                <p onClick={()=>{navigate('trades')}}> معاملات </p>
                 <p onClick={()=>{navigate('assembly')}}> مجامع </p>
            
         </div>
