@@ -31,7 +31,7 @@ const Trades = () =>{
     }
 
     const getTrades = () =>{
-        axios.post(OnRun + '/dara/gettrade', {cookie:cookie
+        axios.post(OnRun + '/dara/gettrade', {cookie:cookie, symbol:symbol
         }).then(response =>{
             if (response.data.replay){
 
