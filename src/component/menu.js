@@ -9,6 +9,7 @@ const Menu = () =>{
         <div className="menu">
             
                 <p onClick={()=>{navigate('trades')}}> معاملات </p>
+                <p onClick={()=>{navigate('sheet')}}> برگ سهم </p>
                 <p onClick={()=>{navigate('assembly')}}> مجامع </p>
            
         </div>

@@ -5,6 +5,10 @@
     url('../../public/Peyda/PeydaWeb/woff2/PeydaWeb-Regular.woff2') format('woff2');
    }
 
+@import  "../../node_modules/tabulator-tables/dist/css/tabulator.min.css";
+
+
+
 
 $colorBlue :#2d41fd;
 $colorPink :#c63ef1;
@@ -20,6 +24,72 @@ $colorBSemi:#1980c3;
 $colorBLite:#2094d2;
 $colorBUltra:#22c0eb;
 $colorDisable:#636363;
+
+
+
+.tabulator{
+    .tabulator-menu-item{
+        text-align: right !important;
+    }
+    .tabulator-data-tree-control{
+        background: mix($colorBDark,#fff,30) !important;
+    }
+
+    .tabulator-data-tree-branch{
+        border-color: mix($colorBDark,#fff,40) !important;
+    }
+    .tabulator-selected{
+        background: $colorBUltra !important;
+        color: $colorTosi;
+    }
+    .tabulator-header{
+        color: $colorBDark;
+        .tabulator-col {
+            background: mix($colorBDark, #fff,20);
+        }
+        input{
+            border-radius: 9px;
+            height: 27px;
+            border: 1px mix($colorBDark, #fff,50) solid;
+        }
+    }
+    .tabulator-footer{
+        color: $colorBDark;
+        background: mix($colorBDark, #fff,20);
+
+    }
+    .tabulator-row{
+        background: mix($colorBDark, #fff,10);
+    }
+    .tabulator-row-even{
+        background:mix($colorBUltra, #fff,0);
+    }
+    .StocksTableChartContiner{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-between;
+        .StocksTableChartPos{
+            background-color: $colorGreen;
+            border-bottom-left-radius: 10px;
+            border-top-left-radius: 10px;
+            height: 15px;
+        }
+        .StocksTableChartNeg{
+            background-color: $colorError;
+            border-bottom-left-radius: 10px;
+            border-top-left-radius: 10px;
+            height: 15px;
+        }
+        .StocksTableChartBlue{
+            background-color: $colorBSemi;
+            border-bottom-left-radius: 10px;
+            border-top-left-radius: 10px;
+            height: 15px;
+        }
+    }
+} 
+
 
 @mixin gradiant() {
     background-image: linear-gradient(to top right,$colorBDark,$colorBUltra);
