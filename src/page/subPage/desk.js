@@ -10,10 +10,6 @@ import { OnRun } from "../../config/OnRun"
 
 const Desk = () =>{
 
-
-
- 
-
     const cookie = getCookie('phn')
     const navigate = useNavigate()
     const CheckCookie = () =>{

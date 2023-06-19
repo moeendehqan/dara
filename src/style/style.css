@@ -1,7 +1,67 @@
+@import "../../node_modules/tabulator-tables/dist/css/tabulator.min.css";
 @font-face {
   font-family: "peydaRegular";
   src: url("../../public/Peyda/Peyda-Regular.ttf") format("truetype"), url("../../public/Peyda/PeydaWeb/woff/PeydaWeb-Regular.woff") format("woff"), url("../../public/Peyda/PeydaWeb/woff2/PeydaWeb-Regular.woff2") format("woff2");
 }
+.tabulator .tabulator-menu-item {
+  text-align: right !important;
+}
+.tabulator .tabulator-data-tree-control {
+  background: #bcc6e2 !important;
+}
+.tabulator .tabulator-data-tree-branch {
+  border-color: #a6b3d8 !important;
+}
+.tabulator .tabulator-selected {
+  background: #22c0eb !important;
+  color: #eae4e4;
+}
+.tabulator .tabulator-header {
+  color: #20409d;
+}
+.tabulator .tabulator-header .tabulator-col {
+  background: #d2d9eb;
+}
+.tabulator .tabulator-header input {
+  border-radius: 9px;
+  height: 27px;
+  border: 1px #90a0ce solid;
+}
+.tabulator .tabulator-footer {
+  color: #20409d;
+  background: #d2d9eb;
+}
+.tabulator .tabulator-row {
+  background: #e9ecf5;
+}
+.tabulator .tabulator-row-even {
+  background: white;
+}
+.tabulator .StocksTableChartContiner {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+}
+.tabulator .StocksTableChartContiner .StocksTableChartPos {
+  background-color: #5aae40;
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
+  height: 15px;
+}
+.tabulator .StocksTableChartContiner .StocksTableChartNeg {
+  background-color: #c45151;
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
+  height: 15px;
+}
+.tabulator .StocksTableChartContiner .StocksTableChartBlue {
+  background-color: #1980c3;
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
+  height: 15px;
+}
+
 html, body, #root, .desk {
   height: 100%;
 }
