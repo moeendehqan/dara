@@ -19,6 +19,7 @@ const Sheet = () =>{
         }).then(response =>{
             if(response.data.replay){
 
+
             }
             else{
                 setCookie('phn', '', 0)
@@ -35,10 +36,11 @@ const Sheet = () =>{
             .then(response =>{
                 if (response.data.replay){
                     setSheetDic(response.data.sheet)
-                    console.log(response.data.sheet)
                 }
                 else{
                     toast.error(response.data.msg,{position: toast.POSITION.BOTTOM_RIGHT});
+                    console.log(response.data)
+
                 }
         })
     }
@@ -53,7 +55,7 @@ const Sheet = () =>{
                     sheetDic==null?null:
                     <p>
                         دارنده این ورقه سهم {sheetDic['fullName']} فرزند {sheetDic['نام پدر']} به کد ملی {sheetDic['کد ملی']} مالک تعداد  {sheetDic['سهام کل']} ، ({sheetDic['stockword']}) سهم یک هزار ریالی با نام از شرکت {sheetDic['company']} میباشد
-                        
+                
 
                     </p>
                     
