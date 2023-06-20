@@ -44,7 +44,6 @@ const Company = ()=>{
             if (response.data.replay){
                 setDatadf(response.data.df)
             }
-        
         })
     }
 

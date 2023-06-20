@@ -53,12 +53,22 @@ const Sheet = () =>{
             <ToastContainer autoClose={3000} />
                 {
                     sheetDic==null?null:
+                    <>
+                    <h2>
+                        {
+                            sheetDic['company']
+                        }
+                    </h2>
                     <p>
                         دارنده این ورقه سهم {sheetDic['fullName']} فرزند {sheetDic['نام پدر']} به کد ملی {sheetDic['کد ملی']} مالک تعداد  {sheetDic['سهام کل']} ، ({sheetDic['stockword']}) سهم یک هزار ریالی با نام از شرکت {sheetDic['company']} میباشد
                 
 
                     </p>
+                    <p>
+                        مالک سهام دارای حقوق مشخصه در اساسنامه شرکت می باشد
+                    </p>
                     
+                    </>
 
                     
                 }
