@@ -35,7 +35,7 @@ const Desk = () =>{
         <div className="desk">
             <Header/>
             <div className="container">
-                <Menu symbol={'state.symbol'}/>
+                <Menu />
                 <Outlet />
             </div>
         </div>
