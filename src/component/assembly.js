@@ -42,7 +42,7 @@ const Assembly = () =>{
         <div>
             {
                 assemblyDic==null?null:
-                <div>
+                <div className="sub">
                     <p>مجمع در تاریخ {assemblyDic.date_jalali} در آدرس {assemblyDic.address} راس ساعت {assemblyDic.time} برگذار خواهد شد</p>
                     <p>موضوع جلسه:
                         {assemblyDic.agenda}
