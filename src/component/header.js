@@ -33,18 +33,22 @@ const Header = () =>{
 
     return(
       <header>
-        <span onClick={exit}>
-            <ImExit/>
-        </span>
-        <span onClick={()=>{navigate('/company')}}>
-            <IoHome/>
-        </span>
+          <div className="btn_header">
+          <span onClick={exit}>
+              <ImExit/>
+          </span>
+          <span onClick={()=>{navigate('/company')}}>
+              <IoHome/>
+          </span>
+        </div>
+        <div className="symbol_header">
         <p>
-          {
-            CompanyName
-          }
-        </p>
-        <img src={process.env.PUBLIC_URL+'/img/'+symbol['symbol']+'.png'}></img>
+            {
+              CompanyName
+            }
+          </p>
+          <img src={process.env.PUBLIC_URL+'/img/'+symbol['symbol']+'.png'}></img>
+        </div>
 
 
       </header>

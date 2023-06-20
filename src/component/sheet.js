@@ -49,7 +49,7 @@ const Sheet = () =>{
     
 
     return(
-        <div>
+        <div className="sub">
             <ToastContainer autoClose={3000} />
                 {
                     sheetDic==null?null:
