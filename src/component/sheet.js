@@ -18,8 +18,6 @@ const Sheet = () =>{
             axios({method:'POST', url: OnRun + '/dara/checkcookie', data:{cookie:cookie}
         }).then(response =>{
             if(response.data.replay){
-
-
             }
             else{
                 setCookie('phn', '', 0)
