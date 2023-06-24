@@ -1,11 +1,11 @@
 @font-face{
     font-family: 'peydaRegular';
-    src: url('../../public/Peyda/Peyda-Regular.ttf') format('truetype'),
+    src: url('../../public/Peyda/Peyda-Regular.ttf') format('ttf'),
     url('../../public/Peyda/PeydaWeb/woff/PeydaWeb-Regular.woff') format('woff'),
     url('../../public/Peyda/PeydaWeb/woff2/PeydaWeb-Regular.woff2') format('woff2');
    }
 
-@import  "../../node_modules/tabulator-tables/dist/css/tabulator.min.css";
+   @import  "../../node_modules/tabulator-tables/dist/css/tabulator.min.css";
 
 
 
@@ -44,12 +44,17 @@ $colorDisable:#636363;
     }
     .tabulator-header{
         color: $colorBDark;
+        .tabulator-headers{
+            height: 57px !important;
+        }
         .tabulator-col {
             background: mix($colorBDark, #fff,20);
         }
         input{
             border-radius: 9px;
             height: 27px;
+            margin: 0px;
+            width: 80%;
             border: 1px mix($colorBDark, #fff,50) solid;
         }
     }
@@ -307,23 +312,33 @@ input{
 }
 
 header{
-    padding: 5px 15px;
+    padding: 5px 0px;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    height: 100px;
+    height: 70px;
     background-color: $colorBDark;
     .btn_header{
+
             span{
                 color: $colorTosi;
-                font-size: 20pt;
-                margin: 0px 5px;
+                font-size: 15pt;           
+                margin: 0px 15px;
                 cursor: pointer;
+                display: flex;
+                flex-direction: row-reverse;
+                align-items: center;
+                p{
+                    margin-right: 5px;
+                }
             }
             display: flex;
+            
             flex-direction: row;
+            align-items: center;
+            
 
 
         }
@@ -334,7 +349,8 @@ header{
             align-items: center;
             
             img{
-                width: 70px;
+                width: 50px;
+                padding: 5px;
                 background-color: $colorTosi;
                 border-radius: 50%;
             }
@@ -351,19 +367,28 @@ header{
 .menu{
     display: flex;
     flex-direction: column;
-    width: 200px;
-    padding: 20px;
-    background-color: $colorBLite;
+    width: 160px;
+    padding: 20px 10px 20px 0px;
+    background-color: $colorBSemi;
     
-    p{
+    .items{
         cursor: pointer;
-        padding-right: 10px;
+        padding: 5px 20px 5px  0px;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: start;
+
         color: $colorTosi;
         font-size: 15pt;
         margin-bottom: 10px;
+        span{
+            margin-left: 5px;
+        }
         &:hover{
-            background: linear-gradient(45deg, $colorTosi, mix($colorTosi, $colorBUltra, 70));
-            border-radius: 10px;
+            background: linear-gradient(90deg, #fff, mix($colorTosi, $colorBUltra, 70));
+            border-radius: 20px;
+            border-top-left-radius: 0px;
+            border-bottom-left-radius: 0px;
             color: $colorDisable;
         }
 
@@ -375,12 +400,33 @@ header{
 .company{
     height: 100%;
     background:linear-gradient(225deg,$colorBUltra,$colorBDark);
+    overflow-y: scroll;
+    &::-webkit-scrollbar{
+        width: 5px;
+    }
+    &::-webkit-scrollbar-track{
+        background: mix($colorBUltra, #fff, 100);
+    }
+    &::-webkit-scrollbar-thumb{
+        
+        background: mix($colorBUltra, #fff, 50);
+        border-radius: 2px;
+
+    }
     >p{
         font-size: 20pt;
         color: $colorTosi;
         padding: 10px;
         width: 100px;
         cursor: pointer;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        span{
+            font-size: 15pt;
+            margin-left: 5px;
+
+        }
        
     }
     .listcompany{
@@ -485,13 +531,16 @@ header{
     display: flex;
     flex-direction: row;
     direction: rtl;
-    height: calc(100% - 100px);
+    height: calc(100% - 80px);
 }
 
 .sub{
     display: flex;
     flex-direction: column;
-    padding: 20px;
+    .sheet-content{
+        padding: 20px;
+    }
+    
     h2{
         margin-bottom: 10px;
         color: $colorDisable;
@@ -503,5 +552,23 @@ header{
         color: $colorDisable;
     }
 }
+
+.sub_table{
+    width: calc(100% - 160px);
+    
+    }
+
+    .tools{
+        display: flex;
+        flex-direction: row;
+        background:rgba($colorBSemi, 0.2);
+        h1{
+            font-size: 15pt;
+            margin-right: 10px;
+            color: $colorBlueTxt;
+            
+        }
+    }
+
 
 

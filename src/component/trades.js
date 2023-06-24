@@ -102,7 +102,16 @@ const Trades = () =>{
     
 
     return(
-        <div>
+        <div className="sub_table">
+            <div className="tools">
+                <h1>
+                    معاملات
+                </h1>
+                <div>
+                    
+                </div>
+                
+            </div>
             <ToastContainer autoClose={3000} />
 
             <div id="data-table"></div>

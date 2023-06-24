@@ -7,6 +7,7 @@ import { useEffect, useState } from "react"
 import { ImExit } from "react-icons/im"
 
 
+
 const Company = ()=>{
 
     const navigate = useNavigate()
@@ -61,6 +62,8 @@ const Company = ()=>{
         <div className="company">
             <p onClick={handleExit}>
                 <ImExit/>
+                <span>خروج</span>
+
             </p>
             <div className="listcompany">
                 {

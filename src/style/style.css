@@ -1,7 +1,7 @@
 @import "../../node_modules/tabulator-tables/dist/css/tabulator.min.css";
 @font-face {
   font-family: "peydaRegular";
-  src: url("../../public/Peyda/Peyda-Regular.ttf") format("truetype"), url("../../public/Peyda/PeydaWeb/woff/PeydaWeb-Regular.woff") format("woff"), url("../../public/Peyda/PeydaWeb/woff2/PeydaWeb-Regular.woff2") format("woff2");
+  src: url("../../public/Peyda/Peyda-Regular.ttf") format("ttf"), url("../../public/Peyda/PeydaWeb/woff/PeydaWeb-Regular.woff") format("woff"), url("../../public/Peyda/PeydaWeb/woff2/PeydaWeb-Regular.woff2") format("woff2");
 }
 .tabulator .tabulator-menu-item {
   text-align: right !important;
@@ -19,12 +19,17 @@
 .tabulator .tabulator-header {
   color: #20409d;
 }
+.tabulator .tabulator-header .tabulator-headers {
+  height: 57px !important;
+}
 .tabulator .tabulator-header .tabulator-col {
   background: #d2d9eb;
 }
 .tabulator .tabulator-header input {
   border-radius: 9px;
   height: 27px;
+  margin: 0px;
+  width: 80%;
   border: 1px #90a0ce solid;
 }
 .tabulator .tabulator-footer {
@@ -251,24 +256,31 @@ input {
 }
 
 header {
-  padding: 5px 15px;
+  padding: 5px 0px;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  height: 100px;
+  height: 70px;
   background-color: #20409d;
 }
 header .btn_header {
   display: flex;
   flex-direction: row;
+  align-items: center;
 }
 header .btn_header span {
   color: #eae4e4;
-  font-size: 20pt;
-  margin: 0px 5px;
+  font-size: 15pt;
+  margin: 0px 15px;
   cursor: pointer;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+}
+header .btn_header span p {
+  margin-right: 5px;
 }
 header .symbol_header {
   display: flex;
@@ -277,7 +289,8 @@ header .symbol_header {
   align-items: center;
 }
 header .symbol_header img {
-  width: 70px;
+  width: 50px;
+  padding: 5px;
   background-color: #eae4e4;
   border-radius: 50%;
 }
@@ -290,26 +303,45 @@ header .symbol_header p {
 .menu {
   display: flex;
   flex-direction: column;
-  width: 200px;
-  padding: 20px;
-  background-color: #2094d2;
+  width: 160px;
+  padding: 20px 10px 20px 0px;
+  background-color: #1980c3;
 }
-.menu p {
+.menu .items {
   cursor: pointer;
-  padding-right: 10px;
+  padding: 5px 20px 5px 0px;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: start;
   color: #eae4e4;
   font-size: 15pt;
   margin-bottom: 10px;
 }
-.menu p:hover {
-  background: linear-gradient(45deg, #eae4e4, #aed9e6);
-  border-radius: 10px;
+.menu .items span {
+  margin-left: 5px;
+}
+.menu .items:hover {
+  background: linear-gradient(90deg, #fff, #aed9e6);
+  border-radius: 20px;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
   color: #636363;
 }
 
 .company {
   height: 100%;
   background: linear-gradient(225deg, #22c0eb, #20409d);
+  overflow-y: scroll;
+}
+.company::-webkit-scrollbar {
+  width: 5px;
+}
+.company::-webkit-scrollbar-track {
+  background: #22c0eb;
+}
+.company::-webkit-scrollbar-thumb {
+  background: #91e0f5;
+  border-radius: 2px;
 }
 .company > p {
   font-size: 20pt;
@@ -317,6 +349,13 @@ header .symbol_header p {
   padding: 10px;
   width: 100px;
   cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.company > p span {
+  font-size: 15pt;
+  margin-left: 5px;
 }
 .company .listcompany {
   background-color: #eae4e4;
@@ -391,12 +430,14 @@ header .symbol_header p {
   display: flex;
   flex-direction: row;
   direction: rtl;
-  height: calc(100% - 100px);
+  height: calc(100% - 80px);
 }
 
 .sub {
   display: flex;
   flex-direction: column;
+}
+.sub .sheet-content {
   padding: 20px;
 }
 .sub h2 {
@@ -408,4 +449,19 @@ header .symbol_header p {
 .sub p {
   font-size: 18pt;
   color: #636363;
+}
+
+.sub_table {
+  width: calc(100% - 160px);
+}
+
+.tools {
+  display: flex;
+  flex-direction: row;
+  background: rgba(25, 128, 195, 0.2);
+}
+.tools h1 {
+  font-size: 15pt;
+  margin-right: 10px;
+  color: #384ab4;
 }/*# sourceMappingURL=style.css.map */

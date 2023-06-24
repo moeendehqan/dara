@@ -36,9 +36,11 @@ const Header = () =>{
           <div className="btn_header">
           <span onClick={exit}>
               <ImExit/>
+              <p>خروج</p>
           </span>
           <span onClick={()=>{navigate('/company')}}>
               <IoHome/>
+              <p>خانه</p>
           </span>
         </div>
         <div className="symbol_header">

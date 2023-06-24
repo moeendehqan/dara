@@ -48,10 +48,19 @@ const Sheet = () =>{
 
     return(
         <div className="sub">
+                  <div className="tools">
+                <h1>
+                    برگ سهم
+                </h1>
+                <div>
+                    
+                </div>
+                
+            </div>
             <ToastContainer autoClose={3000} />
                 {
                     sheetDic==null?null:
-                    <>
+                    <div className="sheet-content">
                     <h2>
                         {
                             sheetDic['company']
@@ -66,7 +75,7 @@ const Sheet = () =>{
                         مالک سهام دارای حقوق مشخصه در اساسنامه شرکت می باشد
                     </p>
                     
-                    </>
+                    </div>
 
                     
                 }
