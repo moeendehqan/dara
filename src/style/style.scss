@@ -425,16 +425,14 @@ header{
         span{
             font-size: 15pt;
             margin-left: 5px;
-
         }
-       
     }
     .listcompany{
         background-color: $colorTosi;
         margin: 0px 20px;
         border-radius: 20px;
         display: flex;
-        flex-direction: row;
+        flex-direction: row-reverse;
         justify-content: center;
         align-items: center;
         flex-wrap: wrap;
@@ -444,6 +442,12 @@ header{
                 text-align: center;
                 color: $colorBSemi;
                 margin-top: 10px;
+            }
+            h3{
+                font-size: 10pt;
+                text-align: center;
+                color: rgba($colorBSemi,0.7);
+                margin-top: 5px;
             }
             overflow: hidden;
             &:hover{
@@ -469,7 +473,7 @@ header{
         flex-direction: column;
         margin: 20px;
         width: 250px;
-        height: 100px;
+        height: 130px;
         cursor: pointer;
         .title{
 
@@ -508,16 +512,19 @@ header{
             .names{
                 p{
                 color: $colorDisable;
+                }
+            }
+            img{
+            filter: grayscale(1);
             }
         }
-        img{
-            filter: grayscale(1);
-        }
-    }
-    h2{
+        h2{
             color: $colorDisable;
-            
         }
+        h3{
+            color: rgba($colorDisable,0.7);
+        }
+
         
 
     }

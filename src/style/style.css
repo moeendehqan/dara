@@ -362,7 +362,7 @@ header .symbol_header p {
   margin: 0px 20px;
   border-radius: 20px;
   display: flex;
-  flex-direction: row;
+  flex-direction: row-reverse;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
@@ -377,7 +377,7 @@ header .symbol_header p {
   flex-direction: column;
   margin: 20px;
   width: 250px;
-  height: 100px;
+  height: 130px;
   cursor: pointer;
 }
 .company .listcompany .eachcompany h2 {
@@ -385,6 +385,12 @@ header .symbol_header p {
   text-align: center;
   color: #1980c3;
   margin-top: 10px;
+}
+.company .listcompany .eachcompany h3 {
+  font-size: 10pt;
+  text-align: center;
+  color: rgba(25, 128, 195, 0.7);
+  margin-top: 5px;
 }
 .company .listcompany .eachcompany:hover .title .names :nth-child(2) {
   opacity: 1;
@@ -424,6 +430,9 @@ header .symbol_header p {
 }
 .company .listcompany .ziro h2 {
   color: #636363;
+}
+.company .listcompany .ziro h3 {
+  color: rgba(99, 99, 99, 0.7);
 }
 
 .container {

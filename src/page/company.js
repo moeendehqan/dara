@@ -82,6 +82,9 @@ const Company = ()=>{
                                 <h2>
                                      تعداد سهام شما:{items['تعداد سهام'].toLocaleString()}
                                 </h2>
+                                <h3>
+                                    از {Math.floor(items['allStockCompany']).toLocaleString()} سهام کل
+                                </h3>
                             </div>
                         )
                     })
