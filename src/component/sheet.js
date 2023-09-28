@@ -29,26 +29,37 @@ const Sheet = () =>{
         }
     }
 
-    const getTrades = () =>{
-        axios.post(OnRun + '/dara/getsheet', {cookie:cookie, symbol:symbol})
-            .then(response =>{
-                if (response.data.replay){
-                    setSheetDic(response.data.sheet)
-                }
-                else{
-                    toast.error(response.data.msg,{position: toast.POSITION.BOTTOM_RIGHT});
-                    console.log(response.data)
-
-                }
-        })
-    }
+    const getSheetpng = () => {
+        if (symbol['symbol']=='visa') {
+            toast.warning('دریافت برگه سهام برای این سهم امکان پذیر نیست')
+        }else{
+            axios.post(OnRun + '/dara/getSheetpng', { cookie: cookie, symbol: symbol }, { responseType: 'arraybuffer' })
+              .then(response => {
+                const blob = new Blob([response.data], { type: 'image/png' });
+                const url = window.URL.createObjectURL(blob);
+          
+                // ایجاد یک لینک برای دانلود تصویر
+                const link = document.createElement('a');
+                link.href = url;
+                link.setAttribute('download', 'sheet1.png');
+          
+                // اضافه کردن لینک به صفحه و کلیک بر روی آن
+                document.body.appendChild(link);
+                link.click();
+          
+                // حذف لینک بعد از دانلود
+                document.body.removeChild(link);
+              })
+              .catch(error => {
+                console.error('Error fetching image:', error);
+              });
+        }
+      };
     useEffect(checkcookie, [])
-    useEffect(getTrades, [])
-    
 
     return(
         <div className="sub">
-                  <div className="tools">
+            <div className="tools">
                 <h1>
                     برگ سهم
                 </h1>
@@ -58,28 +69,7 @@ const Sheet = () =>{
                 
             </div>
             <ToastContainer autoClose={3000} />
-                {
-                    sheetDic==null?null:
-                    <div className="sheet-content">
-                    <h2>
-                        {
-                            sheetDic['company']
-                        }
-                    </h2>
-                    <p>
-                        دارنده این ورقه سهم {sheetDic['fullName']} فرزند {sheetDic['نام پدر']} به کد ملی {sheetDic['کد ملی']} مالک تعداد  {sheetDic['سهام کل']} ، ({sheetDic['stockword']}) سهم یک هزار ریالی با نام از شرکت {sheetDic['company']} میباشد
-                
-
-                    </p>
-                    <p>
-                        مالک سهام دارای حقوق مشخصه در اساسنامه شرکت می باشد
-                    </p>
-                    
-                    </div>
-
-                    
-                }
-
+            <button onClick={getSheetpng} className="BtnDownload">دریافت تصویر سهام</button>
 
 
         </div>

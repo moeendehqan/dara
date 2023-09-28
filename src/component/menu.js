@@ -1,6 +1,6 @@
 
 import { useNavigate } from "react-router-dom"
-import { GiTrade } from "react-icons/gi";
+import { TbArrowsExchange2 ,TbAlignBoxRightTop} from "react-icons/tb";
 
 const Menu = () =>{
 
@@ -10,17 +10,17 @@ const Menu = () =>{
         <div className="menu">
             
                 <div className="items" onClick={()=>{navigate('trades')}}> 
-                <p>معاملات</p>
-                <span><GiTrade/></span> 
+                    <p>معاملات</p>
+                    <span><TbArrowsExchange2/></span> 
                 </div>
                 <div className="items" onClick={()=>{navigate('sheet')}}> 
-                <p>برگ سهم</p>
-                <span><GiTrade/></span> 
+                    <p>برگ سهم</p>
+                    <span><TbAlignBoxRightTop/></span> 
                 </div>
-                <div className="items" onClick={()=>{navigate('assembly')}}> 
-                <p>مجامع</p>
-                <span><GiTrade/></span> 
-                </div>
+                {/*<div className="items" onClick={()=>{navigate('assembly')}}> 
+                    <p>مجامع</p>
+                    <span><GiTrade/></span> 
+                </div>*/}
            
         </div>
     )

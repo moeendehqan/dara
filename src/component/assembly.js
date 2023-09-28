@@ -30,6 +30,7 @@ const Assembly = () =>{
     const getDf = () =>{
         axios.post(OnRun+'/dara/getassembly',{cookie:cookie, symbol:symbol})
             .then(response=>{
+                console.log(response.data)
                 setAssemblyDict(response.data.assembly)
             })
 

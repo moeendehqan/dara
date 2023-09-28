@@ -320,6 +320,7 @@ header{
     width: 100%;
     height: 70px;
     background-color: $colorBDark;
+    flex-wrap: wrap;
     .btn_header{
 
             span{
@@ -486,7 +487,7 @@ header{
                     color: $colorBDark;
                 }
                 :nth-child(1){
-                    font-size: 15pt;
+                    font-size: 12pt;
                     text-align: right;
 
                 }
@@ -544,6 +545,7 @@ header{
 .sub{
     display: flex;
     flex-direction: column;
+    flex: 1;
     .sheet-content{
         padding: 20px;
     }
@@ -558,6 +560,18 @@ header{
         font-size: 18pt;
         color: $colorDisable;
     }
+    .BtnDownload{
+        margin: 50px auto;
+        width: 300px;
+        padding: 5px 0px;
+        border: 1px $colorBDark solid;
+        background: $colorBSemi;
+        border-radius: 10px;
+        color: $colorTosi;
+        font-size: 16pt;
+        cursor: pointer;
+
+    }
 }
 
 .sub_table{
@@ -569,6 +583,7 @@ header{
         display: flex;
         flex-direction: row;
         background:rgba($colorBSemi, 0.2);
+        width: 100%;
         h1{
             font-size: 15pt;
             margin-right: 10px;
@@ -579,3 +594,88 @@ header{
 
 
 
+.LdrOne{
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    top: calc((100% - 250px) / 2);
+    left: calc((100% - 250px) / 2);
+    background: $colorTosi;
+    border-radius: 25px;
+    z-index: 20;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    >div{
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        border: 10px mix($colorBUltra, #fff, 100) solid;
+        border-bottom-color: $colorBDark;
+        animation: ldrone 2s 0s infinite forwards;
+        animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    @keyframes ldrone {
+        to{
+            transform: rotate(360deg);
+        }
+        
+    }
+    p{
+        font-size: 20pt;
+        color: $colorBDark;
+    }
+
+}
+
+
+
+@media screen and (max-width: 700px) {
+    header{
+        .symbol_header{
+            p{
+                font-size: 12pt;
+            }
+            img{
+                width: 35px;
+            }
+        }
+        .btn_header{
+            span{
+                font-size: 12pt;
+            }
+        }
+    }
+    .container{
+        flex-direction: column-reverse;
+    }
+    .menu{
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 0px;
+        .items{
+            flex: 1;
+            align-items: center;
+            justify-content: center;
+            margin: 0px;
+            &:hover{
+                background:  mix($colorTosi, $colorBUltra, 70);
+                color: $colorBDark;
+                border-radius: 0px;
+            }
+        }
+    }
+  }
+
+
+  
+@media screen and (max-width: 550px) {
+    header{
+        flex-direction: column-reverse;
+        .symbol_header{
+            margin: 0px;
+        }
+    }
+  }
