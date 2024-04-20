@@ -103,7 +103,7 @@ const Home = () =>{
         }
     }
 
-
+    
     useEffect(getCaptcha,[])
     useEffect(AccessCheck,[])
     useEffect(CheckCookie,[])
