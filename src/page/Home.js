@@ -38,7 +38,7 @@ const Home = () => {
     axios
       .post(OnRun + "/captcha")
       .then((response) => {
-        setCaptchaCode(response.data.captcha);
+        setCaptchaCode(response.data.encrypted_response);
         setCaptchaImg(response.data.image);
       })
       .catch((err) => {
@@ -129,6 +129,7 @@ const Home = () => {
   return (
     <div className="homePage">
       <div className="login">
+      <h3>درگاه سهامداران</h3>
         {status === "getNationalcode" ? (
           <>
             <input
